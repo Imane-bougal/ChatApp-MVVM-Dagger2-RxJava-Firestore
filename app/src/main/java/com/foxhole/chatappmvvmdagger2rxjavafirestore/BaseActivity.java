@@ -4,6 +4,7 @@ import android.content.Context;
 
 import androidx.multidex.MultiDex;
 
+
 import com.foxhole.chatappmvvmdagger2rxjavafirestore.di.DaggerAppComponent;
 
 import dagger.android.AndroidInjector;

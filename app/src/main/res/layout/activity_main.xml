@@ -15,17 +15,17 @@
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:background="@android:color/white"
-            android:layout_height="?attr/actionBarSize"/>
+            android:layout_height="?attr/actionBarSize"
+            android:background="@android:color/white" />
+
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tab_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:tabSelectedTextColor="@color/colorAccent"
             app:tabIconTint="@color/color_selector"
             app:tabIndicatorColor="@color/colorAccent"
-            app:tabTextAppearance="@style/tab_text">
-        </com.google.android.material.tabs.TabLayout>
+            app:tabSelectedTextColor="@color/colorAccent"
+            app:tabTextAppearance="@style/tab_text"></com.google.android.material.tabs.TabLayout>
 
     </com.google.android.material.appbar.AppBarLayout>
 
