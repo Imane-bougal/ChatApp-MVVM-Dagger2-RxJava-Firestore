@@ -68,16 +68,62 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/email_input" />
 
+    <EditText
+        android:id="@+id/BDtext"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="24dp"
+        android:ems="10"
+        android:fontFamily="@font/raleway_medium"
+        android:hint="Birthday"
+        android:inputType="none"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/password_input" />
+
+    <DatePicker
+        android:id="@+id/datePicker1"
+        android:layout_width="380dp"
+        android:layout_height="188dp"
+        android:layout_margin="10dp"
+        android:calendarViewShown="false"
+        android:datePickerMode="spinner"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/BDtext" />
+
+    <me.mutasem.booleanselection.BooleanSelectionView
+        android:id="@+id/gender"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="24dp"
+        app:endText="Female"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/datePicker1"
+        app:selectedColor="@color/colorPrimary"
+        app:startText="Male"
+        app:textColor="#FFFFFF"
+        app:unSelectedColor="@color/colorPrimaryDark" />
+
+
     <com.google.android.material.button.MaterialButton
-        android:enabled="false"
         android:id="@+id/create_account_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="24dp"
         android:fontFamily="@font/raleway_medium"
         android:text="Create Account"
-        app:backgroundTint="@color/colorYellow"
+        android:textColor="#FFFFFF"
+        app:backgroundTint="@color/colorPrimary"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/password_input" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gender" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

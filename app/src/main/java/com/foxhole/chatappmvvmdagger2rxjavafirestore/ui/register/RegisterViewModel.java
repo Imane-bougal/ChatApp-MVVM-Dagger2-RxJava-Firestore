@@ -36,8 +36,8 @@ public class RegisterViewModel extends ViewModel {
         }
     }
 
-    public void register(String email, String password, String name){
-        authRepository.register(email, password, name)
+    public void register(String email, String password, String name,String imei,String birthday,String gender){
+        authRepository.register(email, password, name , imei, birthday, gender)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new CompletableObserver() {

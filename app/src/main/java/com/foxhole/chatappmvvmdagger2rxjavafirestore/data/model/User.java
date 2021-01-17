@@ -1,23 +1,58 @@
 package com.foxhole.chatappmvvmdagger2rxjavafirestore.data.model;
 
+import java.util.Date;
+
 public class User {
 
     private String email;
     private String displayName;
     private String image;
     private String status;
+    private String telephone;
+    private String imei;
+
+
+
+    private String birthday;
+    private String gender;
     private boolean online;
-
-    public User() {
-
-    }
-
-    public User(String email, String displayName, String image, String status, boolean online) {
+    public User(String email, String displayName, String image, String status, String telephone, String imei, String birthday, String gender, boolean online) {
         this.email = email;
         this.displayName = displayName;
         this.image = image;
         this.status = status;
+        this.telephone = telephone;
+        this.imei = imei;
+        this.birthday = birthday;
+        this.gender = gender;
         this.online = online;
+    }
+    public String getBirthday() {
+        return birthday;
+    }
+
+    public void setBirthday(String birthday) {
+        this.birthday = birthday;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public String getImei() {
+        return imei;
+    }
+
+    public void setImei(String imei) {
+        this.imei = imei;
+    }
+
+    public User() {
+
     }
 
     public String getEmail() {
@@ -58,5 +93,13 @@ public class User {
 
     public void setOnline(boolean online) {
         this.online = online;
+    }
+
+    public String getTelephone() {
+        return telephone;
+    }
+
+    public void setTelephone(String telephone) {
+        this.telephone = telephone;
     }
 }

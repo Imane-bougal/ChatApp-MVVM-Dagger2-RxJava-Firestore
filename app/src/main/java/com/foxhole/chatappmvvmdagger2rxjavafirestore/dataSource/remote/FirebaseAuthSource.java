@@ -1,5 +1,7 @@
 package com.foxhole.chatappmvvmdagger2rxjavafirestore.dataSource.remote;
 
+import android.content.Context;
+import android.telephony.TelephonyManager;
 import android.util.Log;
 
 import androidx.annotation.NonNull;
@@ -22,6 +24,9 @@ import io.reactivex.Completable;
 import io.reactivex.CompletableEmitter;
 import io.reactivex.CompletableOnSubscribe;
 import io.reactivex.Emitter;
+
+import static android.content.Context.TELEPHONY_SERVICE;
+import static androidx.core.content.ContextCompat.getSystemService;
 
 public class FirebaseAuthSource {
 
@@ -47,7 +52,7 @@ public class FirebaseAuthSource {
     }
 
     //create new account
-    public Completable register(final String email, final String password, final String name) {
+    public Completable register(final String email, final String password, final String name, final String imei, final String birthday, final String gender) {
         return Completable.create(new CompletableOnSubscribe() {
             @Override
             public void subscribe(final CompletableEmitter emitter) throws Exception {
@@ -61,13 +66,17 @@ public class FirebaseAuthSource {
                         .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
-                                //create new user
+                                //create new user in firebase
                                 HashMap<String,Object> map = new HashMap<>();
                                 map.put("email",email);
                                 map.put("displayName",name);
                                 map.put("image","default");
                                 map.put("status","default");
                                 map.put("online",true);
+                                map.put("gender", gender);
+                                map.put("imei" , imei);
+                                map.put("birthday", birthday);
+                                map.put("phone", "default");
 
                                 firebaseFirestore.collection(Constants.USERS_NODE)
                                         .document(getCurrentUid()).set(map)

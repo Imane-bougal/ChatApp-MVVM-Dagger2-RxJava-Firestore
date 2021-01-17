@@ -21,8 +21,8 @@ public class AuthRepository {
         return firebaseAuthSource.getCurrentUid();
     }
 
-    public Completable register(String email, String password, String name) {
-        return firebaseAuthSource.register(email, password, name);
+    public Completable register(String email, String password, String name,String imei,String birthday,String gender) {
+        return firebaseAuthSource.register(email, password, name, imei, birthday, gender);
     }
 
     public Completable login(String email, String password){

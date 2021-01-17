@@ -6,6 +6,7 @@ import android.os.Bundle;
 import com.foxhole.chatappmvvmdagger2rxjavafirestore.R;
 import com.foxhole.chatappmvvmdagger2rxjavafirestore.ui.account.AccountActivity;
 import com.foxhole.chatappmvvmdagger2rxjavafirestore.ui.main.connections.ConnectionsPageAdapter;
+import com.foxhole.chatappmvvmdagger2rxjavafirestore.ui.map.MapsActivity;
 import com.google.android.material.badge.BadgeDrawable;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
@@ -92,7 +93,14 @@ public class MainActivity extends DaggerAppCompatActivity {
         if (id == R.id.action_settings) {
             moveToAccountSetting();
         }
+        if (id == R.id.action_locations) {
+            moveToMap();
+        }
         return super.onOptionsItemSelected(item);
+    }
+
+    private void moveToMap() {
+        startActivity( new Intent(MainActivity.this, MapsActivity.class));
     }
 
     private void moveToAccountSetting() {
